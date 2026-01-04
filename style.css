@@ -1,0 +1,509 @@
+ /* Reset  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*  Header  */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 40px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 25px;
+    margin-left: auto;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: #007BFF;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/*  Theme Toggle Button  */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-left: 20px;
+}
+
+.theme-toggle:active {
+    transform: scale(0.9);
+}
+
+/*  Hero Section  */
+.hero {
+    min-height: 100vh;
+    padding: 120px 20px;
+    background: linear-gradient(120deg, #f5f7fa, #c3cfe2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 700px;
+    animation: fadeSlideUp 1.2s ease forwards;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 10px;
+}
+
+.hero-title span {
+    color: #007BFF;
+}
+
+.hero-role {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    margin-bottom: 15px;
+}
+
+.hero-tagline {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    padding: 12px 30px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Floating Shapes */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape1 {
+    width: 200px;
+    height: 200px;
+    background: #007BFF;
+    top: 20%;
+    left: 10%;
+}
+
+.shape2 {
+    width: 200px;
+    height: 200px;
+    background: #00C9A7;
+    bottom: 15%;
+    right: 10%;
+}
+
+/*  About Section  */
+.about {
+    padding: 100px 20px;
+    background: #ffffff;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 250px;
+    height: 210px;
+    border-radius: 50%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about-intro {
+    font-size: 1rem;
+    color: #010701;
+    margin-bottom: 30px;
+}
+
+.about-facts {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.fact {
+    background: #f5f7fa;
+    padding: 12px 18px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.fact:hover {
+    transform: translateY(-5px);
+}
+
+/*  Generic Sections  */
+.section {
+    min-height: 100vh;
+    padding: 120px 20px;
+    font-size: 2rem;
+}
+
+/*  Tablet  */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header {
+        padding: 15px 20px;
+    }
+}
+
+/*  Mobile  */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/*  Animations  */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/*  Section Titles  */
+.section-title {
+    max-width: 1100px;
+    margin: 0 auto 50px auto;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+/*  Skills Section  */
+.skills {
+    padding: 100px 20px;
+    background: #f5f7fa;
+}
+
+.skills-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+}
+
+/*  Achievement Section  */
+.achievement {
+    padding: 100px 20px;
+    background: #ffffff;
+}
+
+.achievement-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.achievement-card {
+    background: #f5f7fa;
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* ===== Gallery Section ===== */
+.gallery {
+    padding: 100px 20px;
+    background: #ffffff;
+}
+
+/* GRID layout */
+.gallery-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Fixed-size container */
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* Same Size */
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* Image control */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* KeY Line */
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+
+/*  Contact Section  */
+.contact {
+    padding: 100px 20px;
+    background: #f5f7fa;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info {
+    margin: 20px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-btn,
+.resume-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #007BFF;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-btn:hover,
+.resume-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-btn:active,
+.resume-btn:active {
+    transform: scale(0.95);
+}
+
+/*  Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #333;
+    color: white;
+    font-size: 0.9rem;
+}
+
+
+/*  Dark Mode */
+body.dark {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .header {
+    background: #1e1e1e;
+}
+
+/* Sections */
+body.dark .hero,
+body.dark .about,
+body.dark .skills,
+body.dark .achievement,
+body.dark .gallery,
+body.dark .contact,
+body.dark .section {
+    background: #121212;
+}
+
+body.dark .section-title {
+    color: #f1f1f1;
+}
+
+body.dark .about-intro,
+body.dark .fact {
+    color: #f1f1f1;
+    background: #1e1e1e;
+}
+
+body.dark .skill-card {
+    background: #1e1e1e;
+    color: #f1f1f1;
+}
+
+body.dark .achievement-card {
+    background: #1e1e1e;
+    color: #f1f1f1;
+}
+
+body.dark .gallery-item {
+    background: #1e1e1e;
+}
+
+body.dark .contact-container {
+    background: #1e1e1e;
+    color: #f1f1f1;
+}
+
+body.dark p,
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+    color: #f1f1f1;
+}
+
+body.dark a {
+    color: #f1f1f1;
+}
+
+body.dark .contact-btn,
+body.dark .resume-btn,
+body.dark .hero-btn {
+    background: #0d6efd;
+}
